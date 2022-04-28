@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --white: #fff;
+    --font-family: 'Manrope', sans-serif;
+    --main-BG: var(--light-grayish-blue);
+    --card-BG: var(--white);
+    --main-CR: var(--very-dark-grayish-blue);
+    --p-CR: var(--desaturated-dark-blue);
+}
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--main-CR);
+    margin: 0px;
+    background-color: var(--main-BG);
+    min-height: 100vh;
+    padding: 10vh 0;
+}
+p {
+    color: var(--p-CR);
+    margin: 18px 0;
+}
+.container {
+    max-width: 85%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+main.container>img {
+    display: block;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.profile {
+    display: flex;
+    overflow: hidden;
+}
+.profile.hide {
+    height: 0;
+}
+.profile .detail {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+.profile .detail img {
+    width: 45px;
+    border-radius: 50%;
+}
+.profile .detail .detail-container {
+    margin-left: 15px;
+}
+.profile .detail p {
+    margin: 0;
+}
+.profile button {
+    cursor: pointer;
+    border: none;
+    padding: 0.769231em;
+    border-radius: 50%;
+    z-index: 10;
+    right: 40px;
+    position: absolute;
+    top: calc(100% - 60px);
+}
+.profile.hide button {
+    top: calc(100% - 57.5px);
+    background-color: var(--desaturated-dark-blue);
+}
+.profile.hide button svg path {
+    fill: #fff;
+}
+.share.active {
+    height: 75px;
+}
+.share, .profile, .profile button {
+    transition: all .15s ease-in-out;
+}
+.share {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    background: var(--very-dark-grayish-blue);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--grayish-blue);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+li{
+    margin-left: 20px;
+}
+.card-container {
+    background-color: var(--card-BG);
+    padding: 40px 40px 0;
+}
+@media (min-width: 1080px) {
+    .container {
+        max-width: 755px;
+        flex-direction: row;
+    }
+    main.container>img {
+        width: 40%;
+        border-radius: 10px 0 0 10px;
+    }
+    .card-container {
+        border-radius: 0 10px 0 0;
+    }
+    .card-container h3 {
+        font-size: 1.6em;
+    }
+    .profile.hide {
+        height: auto;
+    }
+    .profile .detail {
+        padding: 0  40px 30px;
+        border-radius: 0 0 10px 0;
+    }
+    .profile button, .profile.hide button {
+        top: calc(100% - 70px);
+    }
+    .share.active {
+        height: 55px;
+        overflow: visible;
+    }
+    .share {
+        position: absolute;
+        width: fit-content;
+        overflow: hidden;
+        box-shadow: 0px 6px 9px #48556a30;
+        border-radius: 10px;
+        right: 60px;
+        bottom: 75px;
+        transform: translate(50%, -24px);
+    }
+    .share:after {
+        content: '';
+        position: absolute;
+        bottom: -29px;
+        z-index: 100;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        border: 15px solid;
+        border-color: var(--very-dark-grayish-blue) transparent transparent;
+    }
+}
